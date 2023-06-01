@@ -16,6 +16,16 @@ export default class Slider {
     this.slides.forEach((element) => {
       element.style.display = "none";
     });
+    if (this.curSlide === 3) {
+      try {
+        const popUp = document.querySelector(".hanson");
+        popUp.style.opacity = 0;
+        setTimeout(() => {
+          popUp.style.opacity = 1;
+          popUp.classList.add("animated", "slideInUp");
+        }, 3000);
+      } catch (e) {}
+    }
     this.slides[this.curSlide - 1].style.display = "block";
   }
 
