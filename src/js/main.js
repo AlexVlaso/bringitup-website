@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     prev: ".modules__info-btns .slick-prev",
     animate: true,
     activeClass: "card-active",
+    autoplay: true,
   });
   moduleSlider.init();
   const feedSlider = new MiniSlider({
