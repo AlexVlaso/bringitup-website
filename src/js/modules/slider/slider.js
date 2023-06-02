@@ -5,6 +5,7 @@ export default class Slider {
     prev = null,
     animate,
     activeClass = "",
+    autoplay,
   }) {
     this.nextBtns = document.querySelectorAll(next);
     this.prevBtns = document.querySelectorAll(prev);
@@ -12,7 +13,9 @@ export default class Slider {
     this.activeClass = activeClass;
     this.curSlide = 0;
     this.animate = animate;
+    this.autoplay = autoplay;
     this.slides = this.filterNodes(this.mainBlock.children);
+    this.autoplayInterval = null;
   }
   filterNodes(nodeCollection) {
     const resultArr = [];
