@@ -23,18 +23,31 @@ export default class MainSlider extends Slider {
     }
     this.slides[this.curSlide].style.display = "block";
   }
+  bindTriggers() {
+    try {
+      this.nextBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          this.showSlide(1);
+        });
+        btn.parentNode.previousElementSibling.addEventListener("click", (e) => {
+          e.preventDefault();
+          this.curSlide = 0;
+          this.showSlide(0);
+        });
+      });
+      this.prevBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          this.showSlide(-1);
+        });
+      });
+    } catch (e) {}
+  }
 
   render() {
-    this.nextBtns.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        this.showSlide(1);
-      });
-      btn.parentNode.previousElementSibling.addEventListener("click", (e) => {
-        e.preventDefault();
-        this.curSlide = 0;
-        this.showSlide(0);
-      });
-    });
+    if (this.mainBlock) {
+      this.bindTriggers();
+    }
   }
 }
