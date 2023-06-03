@@ -33,7 +33,7 @@ export default class MainSlider extends Slider {
       btn.parentNode.previousElementSibling.addEventListener("click", (e) => {
         e.preventDefault();
         this.curSlide = 0;
-        this.showSlide(1);
+        this.showSlide(0);
       });
     });
   }
