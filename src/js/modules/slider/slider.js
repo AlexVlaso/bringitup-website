@@ -14,7 +14,9 @@ export default class Slider {
     this.curSlide = 0;
     this.animate = animate;
     this.autoplay = autoplay;
-    this.slides = this.filterNodes(this.mainBlock.children);
+    try {
+      this.slides = this.filterNodes(this.mainBlock.children);
+    } catch (e) {}
     this.autoplayInterval = null;
   }
   filterNodes(nodeCollection) {
