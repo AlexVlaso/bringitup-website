@@ -64,19 +64,21 @@ export default class MiniSlider extends Slider {
     });
   }
   init() {
-    this.mainBlock.style.cssText = `
+    try {
+      this.mainBlock.style.cssText = `
     display:flex;
     flex-wrap:wrap;
     overflow:hidden;
     `;
-    this.decorizeSlide();
-    this.bindTriggers();
+      this.decorizeSlide();
+      this.bindTriggers();
 
-    if (this.autoplay) {
-      this.autoplayInterval = setInterval(() => {
-        this.getNextSlide();
-      }, 5000);
-      this.bindAutoplayPause();
-    }
+      if (this.autoplay) {
+        this.autoplayInterval = setInterval(() => {
+          this.getNextSlide();
+        }, 5000);
+        this.bindAutoplayPause();
+      }
+    } catch (e) {}
   }
 }

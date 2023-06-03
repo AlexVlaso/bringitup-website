@@ -1,8 +1,10 @@
 export default class Education {
   constructor(containerSelector) {
     this.container = document.querySelector(containerSelector);
-    this.items = this.container.querySelectorAll(".officer__card-item");
-    this.addTrigger = this.container.querySelector(".plus");
+    try {
+      this.items = this.container.querySelectorAll(".officer__card-item");
+      this.addTrigger = this.container.querySelector(".plus");
+    } catch (e) {}
     this.curItem = 0;
   }
   hideItems() {
@@ -23,7 +25,9 @@ export default class Education {
     });
   }
   init() {
-    this.hideItems();
-    this.bindTrigger();
+    try {
+      this.hideItems();
+      this.bindTrigger();
+    } catch (e) {}
   }
 }

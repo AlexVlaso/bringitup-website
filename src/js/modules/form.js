@@ -65,13 +65,15 @@ export default class Form {
       });
   }
   init() {
-    this.validateEmail();
-    this.validatePhoneNumber();
-    this.forms.forEach((form) => {
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        this.onSubmit(form);
+    try {
+      this.validateEmail();
+      this.validatePhoneNumber();
+      this.forms.forEach((form) => {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          this.onSubmit(form);
+        });
       });
-    });
+    } catch (e) {}
   }
 }
