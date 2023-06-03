@@ -1,4 +1,5 @@
 import Education from "./modules/education";
+import Form from "./modules/form";
 import Player from "./modules/player";
 import MainSlider from "./modules/slider/main_slider";
 import MiniSlider from "./modules/slider/mini_slider";
@@ -37,4 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const educationNew = new Education(".officernew");
   educationOld.init();
   educationNew.init();
+  const forms = new Form(".form");
+  forms.init();
 });
