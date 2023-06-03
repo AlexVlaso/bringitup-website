@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modulePageSlider = new MainSlider({
     main: ".moduleapp",
     next: ".next",
+    prev: ".prevmodule",
   });
   modulePageSlider.render();
   const showupSlider = new MiniSlider({
