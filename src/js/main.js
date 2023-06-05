@@ -1,4 +1,5 @@
 import Accordion from "./modules/accordion";
+import Download from "./modules/download";
 import Education from "./modules/education";
 import Form from "./modules/form";
 import Player from "./modules/player";
@@ -49,4 +50,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const forms = new Form(".form");
   forms.init();
   new Accordion(".module__info-show .plus").init();
+  new Download(".download").init();
 });
