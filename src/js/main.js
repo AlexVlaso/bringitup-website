@@ -38,8 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
     activeClass: "feed__item-active",
   });
   feedSlider.init();
-  const player = new Player(".showup .play", ".overlay");
-  player.init();
+  new Player(".showup .play", ".overlay").init();
+  new Player(".module__video-item .play", ".overlay").init();
+
   const educationOld = new Education(".officerold");
   const educationNew = new Education(".officernew");
   educationOld.init();
